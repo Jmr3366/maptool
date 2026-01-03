@@ -80,11 +80,13 @@ public class HaloRenderer {
 
     var tokenHalos = token.getHalos();
     if (token.getHaloColor() == null && tokenHalos.isEmpty()) {
+      timer.stop("HaloRenderer-renderHalos");
       return;
     }
 
     var grid = zone.getGrid();
     if (grid == null) {
+      timer.stop("HaloRenderer-renderHalos");
       return;
     }
 
